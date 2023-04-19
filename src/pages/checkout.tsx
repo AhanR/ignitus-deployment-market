@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import CartElement from '../components/cartElement';
 import { Link } from 'react-router-dom';
@@ -11,6 +11,9 @@ export default function Checkout() {
   const catalouge = useSelector((s:any)=>s.catalouge)
   const dispatcher = useDispatch();
   const [totalCost, setTotalCost] = useState(catalouge.filter((e:catalougeInterface)=>cart.includes(e.id)).reduce((a:number,b:catalougeInterface)=>a+b.price,0));
+  useEffect(()=>{
+    setTotalCost(catalouge.filter((e:catalougeInterface)=>cart.includes(e.id)).reduce((a:number,b:catalougeInterface)=>a+b.price,0));
+  },[cart])
   return (
     <div>
       <nav
