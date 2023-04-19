@@ -61,7 +61,7 @@ export default function Cart(props : cartProps) {
           padding: 10,
           display: 'flex',
           justifyContent: 'space-between',
-          width: '30%',
+          width: '30ch',
         }}
       >
         <Link
