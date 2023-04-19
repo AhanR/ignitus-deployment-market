@@ -14,7 +14,7 @@ export default function Cart(props : cartProps) {
   return (
     <div
       style={{
-        width: "30%",
+        width: "30ch",
         height: "100vh",
         position: "fixed",
         top: 0,
